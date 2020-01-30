@@ -31,17 +31,18 @@ def reward_function(params):
   print ("Speed: "+str(max_speed))
   print ("Max Steering: "+str(max_steering))
   print ("Min Steering: "+str(min_steering))
+  
+  #Middle
+  if distance_from_center <= marker:
+    reward = 2
+  else:
+    reward = 1
+
   if speed > max_speed:
     reward *= 0.5
   
-  #Mitte
-  if distance_from_center <= marker:
-    reward += 1
-  else:
-    reward *= 0.6
-  
   if min_steering <= steering_angle <= max_steering:
-    reward += 1.0
+    reward += 3
   else:
     reward = 1e-3
   
