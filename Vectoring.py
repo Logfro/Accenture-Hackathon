@@ -14,8 +14,7 @@ def reward_function(params):
 
   try:
     angle = calculate_angle(waypoints[i], waypoints[i+1], waypoints[i+2])
-    break
-  except ValueError:
+  except:
     print("[TEAMSWAH] ValueError")
 
   print("Angle: "+str(angle))
