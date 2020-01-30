@@ -36,7 +36,7 @@ def reward_function(params):
   if distance_from_center <= marker:
     reward = 2
   else:
-    reward = 1
+    reward = 0.75
 
   if speed > max_speed:
     reward *= 0.5
@@ -64,31 +64,6 @@ def length(v):
 def angle(v1, v2):
   return math.acos(dotproduct(v1, v2) / (length(v1) * length(v2)))
 
-def get_test_params():
-    return {
-        'x': 0.7,
-        'y': 1.05,
-        'heading': 160.0,
-        'track_width': 0.45,
-        'is_reversed': False,
-        'steering_angle': 0.0,
-        'closest_waypoints': [0, 1],
-        'distance_from_center': 0,
-        'speed': 5,
-        'waypoints': [
-            [0.75, -0.7],
-            [1.0, 0.0],
-            [0.7, 0.52],
-            [0.58, 0.7],
-            [0.48, 0.8],
-            [0.15, 0.95],
-            [-0.1, 1.0],
-            [-0.7, 0.75],
-            [-0.9, 0.25],
-            [-0.9, -0.55],
-        ]
-    }
-
 def get_test_params2():
     return {
         'x': 0.7,
@@ -96,18 +71,18 @@ def get_test_params2():
         'heading': 160.0,
         'track_width': 0.45,
         'is_reversed': False,
-        'steering_angle': 0.0,
-        'closest_waypoints': [6, 7],
-        'distance_from_center': 0,
+        'steering_angle': 1,
+        'closest_waypoints': [1, 2],
+        'distance_from_center': 4,
         'speed': 5,
         'waypoints': [
-            [0.0, 0.0],
+            [0, 0],
             [1, 1],
-            [2.2, 1.2],
-            [3.4, 0.5],
-            [4.8, -0.6],
-            [6.5, -0.2],
-            [7.7, 0.7],
+            [2.2638341785858, 1.2382063662274],
+            [3.4327786150719, 0.5126546470291],
+            [4.8032651957797, -0.6159813606126],
+            [6.5365276360867, -0.2128970721691],
+            [7.7860889302614, 0.7545052200952],
             [9.0759586532806, 1.8025243700483],
             [10.3255199474553, 2.8908519488457],
             [11.2929222397197, 3.979179527643],
