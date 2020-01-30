@@ -3,10 +3,12 @@ def reward_function(param):
     distance_from_center = param['distance_from_center']
 
     marker_1 = 0.1 * param['track_width']
-    marker_2 = 0.25 * param['track_width']
-    marker_3 = 0.4 * param['track_width']
-    marker_4 = 0.6 * param['track_width']
-    marker_5 = 0.8 * param['track_width']
+    marker_2 = 0.2 * param['track_width']
+    marker_3 = 0.3 * param['track_width']
+    marker_4 = 0.4 * param['track_width']
+    marker_5 = 0.6 * param['track_width']
+    marker_6 = 0.7 * param['track_width']
+    marker_7 = 0.8 * param['track_width']
 
     if distance_from_center <= marker_1:
         reward = 4.0
@@ -18,6 +20,10 @@ def reward_function(param):
         reward = 0.5
     elif distance_from_center <= marker_5:
         reward = 0.25
+    elif distance_from_center <= marker_6:
+        reward = 0.125
+    elif distance_from_center <= marker_7:
+        reward = 0.0625
     else:
         reward = 1e-3  # likely crashed / close to off track
 
