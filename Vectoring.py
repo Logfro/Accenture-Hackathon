@@ -9,7 +9,14 @@ def reward_function(params):
   waypoints = params['waypoints'] + params['waypoints']
   closest_waypoints = params['closest_waypoints']
   i = closest_waypoints[1]
-  angle = calculate_angle(waypoints[i], waypoints[i+1], waypoints[i+2])
+
+  angle = 180
+
+  try:
+    angle = calculate_angle(waypoints[i], waypoints[i+1], waypoints[i+2])
+  except expression as identifier:
+    pass
+
   print("Angle: "+str(angle))
   steering_angle = params['steering_angle']
   
