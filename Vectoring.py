@@ -14,8 +14,8 @@ def reward_function(params):
 
   try:
     angle = calculate_angle(waypoints[i], waypoints[i+1], waypoints[i+2])
-  except expression as identifier:
-    pass
+  except:
+    print("[TEAMSWAH] ValueError")
 
   print("Angle: "+str(angle))
   steering_angle = params['steering_angle']
@@ -53,7 +53,7 @@ def reward_function(params):
   else:
     reward = 1e-3
   
-  return reward
+  return float(reward)
 
 # Returns the angle between three points
 # https://onlinemschool.com/math/library/vector/angl/
